@@ -10,5 +10,13 @@ namespace Simple_Inventory_Management_System.Entity
         {
             products.Add(new Product(name, price, quantity));
         }
+
+        public void ViewAllProducts()
+        {
+            foreach (var product in products)
+            {
+                Console.WriteLine($"Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
+            }
+        }
     }
 }

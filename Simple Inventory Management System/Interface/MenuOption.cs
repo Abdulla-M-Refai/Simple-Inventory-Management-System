@@ -3,7 +3,7 @@ namespace Simple_Inventory_Management_System.Interface
 {
     public enum MenuOption
     {
-        AddProduct,
+        AddProduct = 1,
         DeleteProduct,
         ViewAllProducts,
         SearchProduct,

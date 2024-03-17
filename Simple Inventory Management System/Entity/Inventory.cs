@@ -28,5 +28,10 @@ namespace Simple_Inventory_Management_System.Entity
                 Console.WriteLine($"Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
             }
         }
+
+        public Product? SearchProduct(string name)
+        {
+            return products.Find(p => p.Name == name);
+        }
     }
 }

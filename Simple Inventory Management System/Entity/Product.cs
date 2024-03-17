@@ -63,5 +63,12 @@ namespace Simple_Inventory_Management_System.Entity
                 quantity = value;
             }
         }
+
+        public void Edit(String name, double price, int quantity)
+        {
+            Name = name; 
+            Price = price; 
+            Quantity = quantity;
+        }
     }
 }

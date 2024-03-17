@@ -33,5 +33,24 @@ namespace Simple_Inventory_Management_System.Entity
         {
             return products.Find(p => p.Name == name);
         }
+
+        public void EditProduct(string productName, string newName, double newPrice, int newQuantity)
+        {
+            Product? product = SearchProduct(productName);
+            
+            if(product == null)
+            {
+                Console.WriteLine("product not found");
+                return;
+            }
+
+            if(SearchProduct(newName) == null)
+            {
+                Console.WriteLine($"Product with name: {newName} already exist");
+                return;
+            }
+
+            product.Edit(newName, newPrice, newQuantity);
+        }
     }
 }

@@ -8,7 +8,12 @@ namespace Simple_Inventory_Management_System.Entity
 
         public void AddProduct(string name, double price, int quantity)
         {
-            products.Add(new Product(name, price, quantity));
+            Product? product = SearchProduct(name);
+
+            if (product == null)
+                products.Add(new Product(name, price, quantity));
+            else
+                Console.WriteLine($"Product with name: {name} already exist");
         }
 
         public void DeleteProduct(string name)

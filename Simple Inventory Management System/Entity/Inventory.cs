@@ -11,9 +11,14 @@ namespace Simple_Inventory_Management_System.Entity
             Product? product = SearchProduct(name);
 
             if (product == null)
+            {
                 products.Add(new Product(name, price, quantity));
+                Console.WriteLine("Product added successfully");
+            }
             else
+            {
                 Console.WriteLine($"Product with name: {name} already exist");
+            }     
         }
 
         public void DeleteProduct(string name)
@@ -21,13 +26,24 @@ namespace Simple_Inventory_Management_System.Entity
             var product = products.Find(p => p.Name == name);
 
             if (product != null)
+            {
                 products.Remove(product);
+                Console.WriteLine("Product deleted successfully");
+            }
             else
+            {
                 Console.WriteLine("Product not found!");
+            }
         }
 
         public void ViewAllProducts()
         {
+            if(products.Count == 0) 
+            {
+                Console.WriteLine("Inventory is empty");
+                return;
+            }
+
             foreach (var product in products)
             {
                 Console.WriteLine($"Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");

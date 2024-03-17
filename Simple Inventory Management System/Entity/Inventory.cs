@@ -20,5 +20,13 @@ namespace Simple_Inventory_Management_System.Entity
             else
                 Console.WriteLine("Product not found!");
         }
+
+        public void ViewAllProducts()
+        {
+            foreach (var product in products)
+            {
+                Console.WriteLine($"Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
+            }
+        }
     }
 }
